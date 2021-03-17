@@ -5,6 +5,7 @@ import java.util.Random;
 public class Malla {
     final int gFilas;
     final int gColumnas;
+    final int gObstaculos;
     char[][] gMatrix;
 
     public Malla(long seed, int filas, int columnas, int obstaculos) {
@@ -13,15 +14,16 @@ public class Malla {
 
         gFilas = filas;
         gColumnas = columnas;
+        gObstaculos = obstaculos;
 
         gMatrix = iniMatrix();
-        generarObstaculos(S,obstaculos);
+        generarObstaculos(S);
         generarInicioyFinal(S);
 
     }
 
-    public void generarObstaculos(Random seed, int obstaculos) {
-        for (int i = 0; i < obstaculos; i++) {
+    public void generarObstaculos(Random seed) {
+        for (int i = 0; i < gObstaculos; i++) {
             int filaObstaculo = seed.nextInt(gFilas);
             int columnaObstaculo = seed.nextInt(gColumnas);
             while(ocupada(filaObstaculo, columnaObstaculo)){
@@ -35,7 +37,8 @@ public class Malla {
     public void generarInicioyFinal (Random seed) {
         int rndFila = seed.nextInt(gFilas);
         int rndColumna = seed.nextInt(gColumnas);
-        boolean ini = false,check = false;
+        boolean ini = false;
+        boolean check = false;
         while(!check) {
             if (!ocupada(rndFila, rndColumna) && ini) {
                 gMatrix[rndFila][rndColumna] = 'F';
@@ -74,6 +77,18 @@ public class Malla {
             }
             System.out.println(" ");
         }
+    }
+
+    public int getFilas() {
+        return gFilas;
+    }
+
+    public int getColumnas() {
+        return gColumnas;
+    }
+
+    public int getObstaculos() {
+        return gObstaculos;
     }
 }
 
