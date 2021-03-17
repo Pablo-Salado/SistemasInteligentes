@@ -1,4 +1,1 @@
-# SistemasInteligentes 
-#Prueba
-#Segunda prueba
-#Tercera prueba
+Aplicación de la clase privada Tuple
