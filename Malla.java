@@ -6,6 +6,26 @@ public class Malla {
     final int gFilas;
     final int gColumnas;
     char[][] gMatrix;
+    Tuple posI;
+    Tuple posF;
+
+    private class Tuple{
+        final int fila;
+        final int columna;
+
+        public Tuple(int A, int B){
+            fila=A;
+            columna = B;
+        }
+
+        @Override
+        public String toString() {
+            return "Coords{" +
+                    "fila=" + fila +
+                    ", columna=" + columna +
+                    '}';
+        }
+    }
 
     public Malla(long seed, int filas, int columnas, int obstaculos) {
         Random S = new Random();
@@ -32,6 +52,14 @@ public class Malla {
         }
     }
 
+    public Tuple getPosI() {
+        return posI;
+    }
+
+    public Tuple getPosF() {
+        return posF;
+    }
+
     public void generarInicioyFinal (Random seed) {
         int rndFila = seed.nextInt(gFilas);
         int rndColumna = seed.nextInt(gColumnas);
@@ -40,9 +68,11 @@ public class Malla {
             if (!ocupada(rndFila, rndColumna) && ini) {
                 gMatrix[rndFila][rndColumna] = 'F';
                 check = true;
+                posF = new Tuple(rndFila,rndColumna);
             }else if(!ocupada(rndFila, rndColumna) && !ini){
                 gMatrix[rndFila][rndColumna] = 'I';
                 ini = true;
+                posI = new Tuple(rndFila,rndColumna);
             }else{
                 rndFila = seed.nextInt(gFilas);
                 rndColumna = seed.nextInt(gColumnas);
