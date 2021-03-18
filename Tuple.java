@@ -1,8 +1,8 @@
 package SistemasInteligentes;
 
 public class Tuple {
-    final int fila;
-    final int columna;
+    public int fila;
+    public int columna;
 
     public Tuple(int A, int B){
         fila=A;
@@ -15,5 +15,10 @@ public class Tuple {
                 "fila=" + fila +
                 ", columna=" + columna +
                 '}';
+    }
+
+    public void asign (int filaNueva, int columnaNueva) {
+        fila = filaNueva;
+        columna = columnaNueva;
     }
 }
