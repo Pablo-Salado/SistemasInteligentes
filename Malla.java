@@ -3,7 +3,7 @@ package SistemasInteligentes;
 import java.util.List;
 import java.util.Random;
 
-public class Malla implements Estado{
+public class Malla{
     final int gFilas;
     final int gColumnas;
     char[][] gMatrix;
@@ -79,21 +79,6 @@ public class Malla implements Estado{
             }
         }
         return aux;
-    }
-
-    @Override
-    public List<? extends Estado> calculaSucesores() {
-        return null;
-    }
-
-    @Override
-    public int coste(Estado e2) {
-        return 0;
-    }
-
-    @Override
-    public int h(Estado objetivo) {
-        return 0;
     }
 
     public void ver(){
