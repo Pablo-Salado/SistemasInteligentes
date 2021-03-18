@@ -8,7 +8,7 @@ public interface Estado {
      * @return lista con los estados sucesores inmediatos del estado actual en el espacio de estados
      */
 
-    public List<? extends Estado> calculaSucesores();
+    public List<Tuple> calculaSucesores();
 
     /**
      * @param e2

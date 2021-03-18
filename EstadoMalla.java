@@ -12,8 +12,8 @@ public class EstadoMalla implements Estado{
     }
 
     @Override
-    public List<? extends Estado> calculaSucesores() {
-        List<Estado> estado = new ArrayList<>();
+    public List<Tuple> calculaSucesores() {
+        List<Tuple> estado = new ArrayList<>();
         int cont = 0;
         Tuple sucesorActual = malla.getPosI();
         sucesorActual.asign(malla.getPosI().fila + 1, malla.getPosI().columna);
