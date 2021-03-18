@@ -6,7 +6,7 @@ public class testMalla {
         Malla campo = new Malla(1, 3, 5, 4);
 
         campo.ver();
-        System.out.println(campo.getPosI());
-        System.out.println(campo.getPosF());
+        System.out.println("La posición inicial es: " + campo.getPosI());
+        System.out.println("La posición final es: " + campo.getPosF());
     }
 }
