@@ -1,12 +1,21 @@
 package SistemasInteligentes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EstadoMalla implements Estado{
 
+    static Malla matriz;
+
+    public EstadoMalla(Malla mat){
+        matriz = mat;
+
+    }
 
     @Override
     public List<? extends Estado> calculaSucesores() {
+        List<Estado> estado = new ArrayList<>();
+
         return null;
     }
 
@@ -24,4 +33,13 @@ public class EstadoMalla implements Estado{
     public void ver() {
 
     }
+
+    public boolean equals(){
+       return false;
+    }
+
+    public int hashCode(){
+        return 0;
+    }
+
 }

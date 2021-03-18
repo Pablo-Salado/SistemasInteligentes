@@ -11,6 +11,7 @@ public class Malla{
     Tuple posF;
 
 
+
     public Malla(long seed, int filas, int columnas, int obstaculos) {
         Random S = new Random();
         S.setSeed(seed);
@@ -24,6 +25,17 @@ public class Malla{
 
     }
 
+    public char[][] getgMatrix() {
+        return gMatrix;
+    }
+    public Tuple getPosI() {
+        return posI;
+    }
+
+    public Tuple getPosF() {
+        return posF;
+    }
+
     public void generarObstaculos(Random seed, int obstaculos) {
         for (int i = 0; i < obstaculos; i++) {
             int filaObstaculo = seed.nextInt(gFilas);
@@ -34,14 +46,6 @@ public class Malla{
             }
             gMatrix[filaObstaculo][columnaObstaculo] = 'X';
         }
-    }
-
-    public Tuple getPosI() {
-        return posI;
-    }
-
-    public Tuple getPosF() {
-        return posF;
     }
 
     public void generarInicioyFinal (Random seed) {
@@ -89,4 +93,5 @@ public class Malla{
             System.out.println(" ");
         }
     }
+
 }

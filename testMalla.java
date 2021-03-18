@@ -8,5 +8,7 @@ public class testMalla {
         campo.ver();
         System.out.println("La posición inicial es: " + campo.getPosI());
         System.out.println("La posición final es: " + campo.getPosF());
+
+        EstadoMalla m= new EstadoMalla(campo);
     }
 }
