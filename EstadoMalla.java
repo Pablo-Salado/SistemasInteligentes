@@ -18,7 +18,7 @@ public class EstadoMalla implements Estado{
         int cont = 0;
 
         while(cont < 4){
-            if(OutOfMatrix(matriz.posI)){
+            if(OutOfMatrix(matriz.getPosI())){
                 cont++;
             }else{
 
@@ -31,7 +31,7 @@ public class EstadoMalla implements Estado{
     }
 
     private boolean OutOfMatrix(Tuple posI) {
-        return posI.fila >= 0 && posI.fila < matriz.gFilas && posI.columna >= 0 && posI.columna < matriz.gColumnas;
+        return posI.fila >= 0 && posI.fila < matriz.getFilas() && posI.columna >= 0 && posI.columna < matriz.getColumnas();
     }
 
 
