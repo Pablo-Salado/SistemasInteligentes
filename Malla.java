@@ -9,23 +9,6 @@ public class Malla {
     Tuple posI;
     Tuple posF;
 
-    private class Tuple{
-        final int fila;
-        final int columna;
-
-        public Tuple(int A, int B){
-            fila=A;
-            columna = B;
-        }
-
-        @Override
-        public String toString() {
-            return "Coords{" +
-                    "fila=" + fila +
-                    ", columna=" + columna +
-                    '}';
-        }
-    }
 
     public Malla(long seed, int filas, int columnas, int obstaculos) {
         Random S = new Random();
