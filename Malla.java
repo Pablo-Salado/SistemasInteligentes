@@ -3,10 +3,15 @@ package SistemasInteligentes;
 import java.util.Random;
 
 public class Malla {
-    final int gFilas;
-    final int gColumnas;
-    final int gObstaculos;
-    char[][] gMatrix;
+    private final int gFilas;
+    private final int gColumnas;
+    private final int gObstaculos;
+    private char[][] gMatrix;
+
+    private int filaInicio;
+    private int columnaInicio;
+    private int filaFinal;
+    private int columnaFinal;
 
     public Malla(long seed, int filas, int columnas, int obstaculos) {
         Random S = new Random();
@@ -42,9 +47,13 @@ public class Malla {
         while(!check) {
             if (!ocupada(rndFila, rndColumna) && ini) {
                 gMatrix[rndFila][rndColumna] = 'F';
+                filaFinal = rndFila;
+                columnaFinal = rndColumna;
                 check = true;
             }else if(!ocupada(rndFila, rndColumna) && !ini){
                 gMatrix[rndFila][rndColumna] = 'I';
+                filaInicio = rndFila;
+                columnaInicio = rndColumna;
                 ini = true;
             }else{
                 rndFila = seed.nextInt(gFilas);
@@ -89,6 +98,14 @@ public class Malla {
 
     public int getObstaculos() {
         return gObstaculos;
+    }
+
+    public String getInicio() {
+        return "(" + filaInicio + ", " + columnaInicio + ")";
+    }
+
+    public String getFinal() {
+        return "(" + filaFinal + ", " + columnaFinal + ")";
     }
 }
 
