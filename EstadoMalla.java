@@ -5,36 +5,39 @@ import java.util.List;
 
 public class EstadoMalla implements Estado{
 
-    static Malla matriz;
+    static Malla malla;
 
     public EstadoMalla(Malla mat){
-        matriz = mat;
+        malla = mat;
     }
 
     @Override
     public List<? extends Estado> calculaSucesores() {
         List<Estado> estado = new ArrayList<>();
         int cont = 0;
-        Tuple sucesorActual = matriz.getPosI();
+        Tuple sucesorActual = malla.getPosI();
+        sucesorActual.asign(malla.getPosI().fila + 1, malla.getPosI().columna);
 
         while(cont < 4){
-            //asignar a sucesorActual el primer posible sucesor
+            //asignar a sucesorActual el siguiente posible sucesor
             if(InMalla(sucesorActual) && esHueco(sucesorActual)){ //si está en la malla y es un hueco
                 estado.add(sucesorActual); //añadirlo a la lista de estados
-                cont++;
-            }else{
-                //o esta fuera de la matriz o es un obstaculo por tanto no se considera sucesor
+
             }
+            cont++; //o esta fuera de la matriz o es un obstaculo por tanto no se considera sucesor
+
         }
         return estado;
     }
 
     private boolean InMalla(Tuple posI) {
-        return posI.fila >= 0 && posI.fila < matriz.getFilas() && posI.columna >= 0 && posI.columna < matriz.getColumnas();
+        return posI.fila >= 0 && posI.fila < malla.getFilas() && posI.columna >= 0 && posI.columna < malla.getColumnas();
     }
 
     private boolean esHueco (Tuple sucesor) {
-        return false;
+        char[][] matriz;
+        matriz = malla.getgMatrix();
+        return matriz[sucesor.fila][sucesor.columna] == '-';
     }
 
 

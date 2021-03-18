@@ -32,7 +32,7 @@ public class AgenteA {
                 for(Estado e2: e.calculaSucesores()){
                     int nuevoCoste = ge + e.coste(e2);
 
-                    if (!arbol.containsKey(e2)){	//nuevon nodo: simplemente a�adimos e2 al �rboly a abiertos
+                    if (!arbol.containsKey(e2)){	//nuevo nodo: simplemente a�adimos e2 al �rboly a abiertos
                         arbol.put(new Nodo(e2, nuevoCoste, n));
                         abiertos.offer(nuevoCoste + e2.h(objetivo),  e2);
                     } else {

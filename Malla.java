@@ -103,6 +103,10 @@ public class Malla {
     public Tuple getPosF() {
         return posF;
     }
+
+    public char[][] getgMatrix () {
+        return gMatrix;
+    }
 }
 
 
