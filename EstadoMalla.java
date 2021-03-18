@@ -16,7 +16,7 @@ public class EstadoMalla implements Estado{
     public List<? extends Estado> calculaSucesores() {
         List<Estado> estado = new ArrayList<>();
 
-        return null;
+        return estado;
     }
 
     @Override
