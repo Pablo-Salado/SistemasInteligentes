@@ -1,4 +1,4 @@
-package SistemasInteligentes;
+package SistemasInteligentes.GeneradorProblema;
 
 public class Tuple {
         final int fila;

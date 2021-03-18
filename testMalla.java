@@ -1,5 +1,8 @@
 package SistemasInteligentes;
 
+import SistemasInteligentes.GeneradorProblema.EstadoMalla;
+import SistemasInteligentes.GeneradorProblema.Malla;
+
 public class testMalla {
 
     public static void main(String [] args) {

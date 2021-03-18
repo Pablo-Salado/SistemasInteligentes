@@ -1,4 +1,4 @@
-package SistemasInteligentes;
+package SistemasInteligentes.GeneradorProblema;
 
 import java.util.List;
 
