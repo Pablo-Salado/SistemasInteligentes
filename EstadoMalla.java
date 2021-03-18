@@ -18,12 +18,12 @@ public class EstadoMalla implements Estado{
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> estado = new ArrayList<>();
         int cont = 0;
-        Tuple auxiliar = malla.getPosI();
-        EstadoMalla sucesorActual = new EstadoMalla(auxiliar, "A");
-        sucesorActual.posicion.asign(malla.getPosI().fila + 1, malla.getPosI().columna);
+        EstadoMalla sucesorActual = new EstadoMalla(malla.getPosI(), 'A');
+        sucesorActual.posicion.asign(malla.getPosI().fila - 1, malla.getPosI().columna);
 
         while(cont < 4){
             //asignar a sucesorActual el siguiente posible sucesor
+            //para hacer eso tener en cuenta q tenemos q llegar a las posiciones (-1,0) (1,0) (0,-1) (0,1)
             if(InMalla(sucesorActual) && esHueco(sucesorActual)){ //si está en la malla y es un hueco
                 estado.add(sucesorActual); //añadirlo a la lista de estados
             }
