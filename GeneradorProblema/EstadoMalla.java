@@ -9,14 +9,11 @@ public class EstadoMalla implements Estado{
 
     public EstadoMalla(Malla mat){
         matriz = mat;
-
     }
 
     @Override
     public List<? extends Estado> calculaSucesores() {
-        List<Estado> estado = new ArrayList<>();
-
-        return estado;
+        return null;
     }
 
     @Override
