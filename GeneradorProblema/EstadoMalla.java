@@ -6,14 +6,21 @@ import java.util.List;
 public class EstadoMalla implements Estado{
 
     static Malla matriz;
+    Tuple inicio;
+    Tuple fin;
+    Tuple actual;
 
-    public EstadoMalla(Malla mat){
+    public EstadoMalla(Malla mat,Tuple actual){
         matriz = mat;
+        inicio = mat.getPosI();
+        fin = mat.getPosF();
+        this.actual = actual;
     }
+
 
     @Override
     public List<? extends Estado> calculaSucesores() {
-        return null;
+
     }
 
     @Override
