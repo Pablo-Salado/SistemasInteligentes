@@ -39,7 +39,6 @@ public class EstadoMalla implements Estado{
             EstadoMalla izquierda = new EstadoMalla(malla, izq);
             estados.add(izquierda);
         }
-
         return estados;
     }
 
