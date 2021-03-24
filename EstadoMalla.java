@@ -15,32 +15,43 @@ public class EstadoMalla implements Estado{
 
     @Override
     public List<? extends Estado> calculaSucesores() {
-        List<EstadoMalla> estado = new ArrayList<>();
-        int cont = 0;
-        EstadoMalla sucesorActual = new EstadoMalla(malla, malla.getPosI());
-        sucesorActual.posicion.asign(malla.getPosI().fila - 1, malla.getPosI().columna);
+        List<EstadoMalla> estados = new ArrayList<>();
 
-        while(cont < 4){
-            //asignar a sucesorActual el siguiente posible sucesor
-            //para hacer eso tener en cuenta q tenemos q llegar a las posiciones (-1,0) (1,0) (0,-1) (0,1)
-            if(InMalla(sucesorActual) && esHueco(sucesorActual)){ //si está en la malla y es un hueco
-                estado.add(sucesorActual); //añadirlo a la lista de estados
-            }
-            cont++; //o esta fuera de la matriz o es un obstaculo por tanto no se considera sucesor
+        Tuple sup = posicion;
+        sup.asign(sup.fila-1, sup.columna);
+        Tuple inf=posicion;
+        inf.asign(inf.fila+1, inf.columna);
+        Tuple der=posicion;
+        der.asign(der.fila,der.columna+1);
+        Tuple izq=posicion;
+        izq.asign(izq.fila,izq.columna+1);
 
+        if(esHueco(sup) && InMalla(sup)) {
+            EstadoMalla superior = new EstadoMalla(malla, sup);
+            estados.add(superior);
+        }else if(esHueco(inf) && InMalla(inf)){
+            EstadoMalla inferior = new EstadoMalla(malla, inf);
+            estados.add(inferior);
+        }else if(esHueco(der) && InMalla(der)){
+            EstadoMalla derecha = new EstadoMalla(malla, der);
+            estados.add(derecha);
+        }else if (esHueco(izq) && InMalla(izq)){
+            EstadoMalla izquierda = new EstadoMalla(malla, izq);
+            estados.add(izquierda);
         }
-        return estado;
+
+        return estados;
     }
 
-    private boolean InMalla(EstadoMalla sucesor) {
-        return sucesor.posicion.fila >= 0 && sucesor.posicion.fila < malla.getFilas()
-                && sucesor.posicion.columna >= 0 && sucesor.posicion.columna < malla.getColumnas();
+    private boolean InMalla(Tuple sucesor) {
+        return sucesor.fila >= 0 && sucesor.fila < malla.getFilas()
+                && sucesor.columna >= 0 && sucesor.columna < malla.getColumnas();
     }
 
-    private boolean esHueco (EstadoMalla sucesor) {
+    private boolean esHueco (Tuple sucesor) {
         char[][] matriz;
         matriz = malla.getgMatrix();
-        return matriz[sucesor.posicion.fila][sucesor.posicion.columna] == '-';
+        return matriz[sucesor.fila][sucesor.columna] == '-';
     }
 
 
