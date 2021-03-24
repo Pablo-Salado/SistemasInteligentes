@@ -17,7 +17,7 @@ public class EstadoMalla implements Estado{
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> estados = new ArrayList<>();
 
-        Tuple sup = posicion;
+        Tuple sup =posicion;
         sup.asign(sup.fila-1, sup.columna);
         Tuple inf=posicion;
         inf.asign(inf.fila+1, inf.columna);
