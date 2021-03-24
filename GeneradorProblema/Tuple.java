@@ -1,15 +1,23 @@
 package SistemasInteligentes.GeneradorProblema;
 
 public class Tuple {
-        final int fila;
-        final int columna;
+         int fila;
+         int columna;
 
         public Tuple(int A, int B){
             fila=A;
             columna = B;
         }
 
-        @Override
+    public void setFila(int fila) {
+        this.fila = fila;
+    }
+
+    public void setColumna(int columna) {
+        this.columna = columna;
+    }
+
+    @Override
         public String toString() {
             return "Coords{" +
                     "fila=" + fila +
