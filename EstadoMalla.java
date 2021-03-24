@@ -6,19 +6,17 @@ import java.util.List;
 public class EstadoMalla implements Estado{
 
     private static Malla malla;
-    private char estado;
     private Tuple posicion;
 
-    public EstadoMalla(Tuple pos, char est){
+    public EstadoMalla(Tuple pos){
         posicion = pos;
-        estado = est;
     }
 
     @Override
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> estado = new ArrayList<>();
         int cont = 0;
-        EstadoMalla sucesorActual = new EstadoMalla(malla.getPosI(), 'A');
+        EstadoMalla sucesorActual = new EstadoMalla(malla.getPosI());
         sucesorActual.posicion.asign(malla.getPosI().fila - 1, malla.getPosI().columna);
 
         while(cont < 4){
@@ -34,7 +32,8 @@ public class EstadoMalla implements Estado{
     }
 
     private boolean InMalla(EstadoMalla sucesor) {
-        return sucesor.posicion.fila >= 0 && sucesor.posicion.fila < malla.getFilas() && sucesor.posicion.columna >= 0 && sucesor.posicion.columna < malla.getColumnas();
+        return sucesor.posicion.fila >= 0 && sucesor.posicion.fila < malla.getFilas()
+                && sucesor.posicion.columna >= 0 && sucesor.posicion.columna < malla.getColumnas();
     }
 
     private boolean esHueco (EstadoMalla sucesor) {
