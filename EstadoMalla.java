@@ -8,7 +8,8 @@ public class EstadoMalla implements Estado{
     private static Malla malla;
     private Tuple posicion;
 
-    public EstadoMalla(Tuple pos){
+    public EstadoMalla(Malla mall, Tuple pos){
+        malla = mall;
         posicion = pos;
     }
 
@@ -16,7 +17,7 @@ public class EstadoMalla implements Estado{
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> estado = new ArrayList<>();
         int cont = 0;
-        EstadoMalla sucesorActual = new EstadoMalla(malla.getPosI());
+        EstadoMalla sucesorActual = new EstadoMalla(malla, malla.getPosI());
         sucesorActual.posicion.asign(malla.getPosI().fila - 1, malla.getPosI().columna);
 
         while(cont < 4){
