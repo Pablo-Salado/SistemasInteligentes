@@ -9,6 +9,14 @@ public class Tuple {
             columna = B;
         }
 
+    public int getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
     public void setFila(int fila) {
         this.fila = fila;
     }
