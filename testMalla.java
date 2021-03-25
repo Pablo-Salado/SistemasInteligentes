@@ -7,8 +7,6 @@ public class testMalla {
         campo.ver();
 
         EstadoMalla test = new EstadoMalla(campo, campo.getPosI());
-        for(Estado x: test.calculaSucesores()){
-            test.ver();
-        }
+        System.out.println(test.calculaSucesores());
     }
 }

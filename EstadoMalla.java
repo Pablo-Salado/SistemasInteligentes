@@ -17,25 +17,30 @@ public class EstadoMalla implements Estado{
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> estados = new ArrayList<>();
 
-        Tuple sup =posicion;
+        Tuple sup = new Tuple(posicion.fila, posicion.columna);
         sup.asign(sup.fila-1, sup.columna);
-        Tuple inf=posicion;
-        inf.asign(inf.fila+1, inf.columna);
-        Tuple der=posicion;
-        der.asign(der.fila,der.columna+1);
-        Tuple izq=posicion;
-        izq.asign(izq.fila,izq.columna+1);
-
-        if(InMalla(sup) && esHueco(sup)) {
+        if(InMalla(sup) && esHueco(sup)){
             EstadoMalla superior = new EstadoMalla(malla, sup);
             estados.add(superior);
-        }else if(InMalla(inf) && esHueco(inf)){
+        }
+
+        Tuple inf = new Tuple(posicion.fila, posicion.columna);
+        inf.asign(inf.fila+1, inf.columna);
+        if(InMalla(inf) && esHueco(inf)){
             EstadoMalla inferior = new EstadoMalla(malla, inf);
             estados.add(inferior);
-        }else if(InMalla(der) && esHueco(der)){
+        }
+
+        Tuple der = new Tuple(posicion.fila, posicion.columna);
+        der.asign(der.fila, der.columna+1);
+        if(InMalla(der) && esHueco(der)){
             EstadoMalla derecha = new EstadoMalla(malla, der);
             estados.add(derecha);
-        }else if (InMalla(izq) && esHueco(izq)){
+        }
+
+        Tuple izq = new Tuple(posicion.fila, posicion.columna);
+        izq.asign(izq.fila, izq.columna-1);
+        if(InMalla(izq) && esHueco(izq)){
             EstadoMalla izquierda = new EstadoMalla(malla, izq);
             estados.add(izquierda);
         }
@@ -57,7 +62,7 @@ public class EstadoMalla implements Estado{
 
     @Override
     public int coste(Estado e2) {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -70,8 +75,8 @@ public class EstadoMalla implements Estado{
         System.out.println(posicion.toString());
     }
 
-    public boolean equals(){
-        return false;
+    public boolean equals(EstadoMalla e2){
+        return posicion == e2.posicion;
     }
 
     public int hashCode(){
