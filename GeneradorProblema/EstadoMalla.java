@@ -22,25 +22,31 @@ public class EstadoMalla implements Estado{
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> estados = new ArrayList<>();
 
-        Tuple sup = actual;
-        sup.setFila(sup.fila-1);
-        Tuple inf=actual;
-        inf.setFila(inf.fila+1);
-        Tuple der=actual;
-        der.setColumna(der.columna+1);
-        Tuple izq=actual;
-        izq.setColumna(izq.columna+1);
+        int filaActual = actual.getFila(), columnaActual = actual.getColumna();
 
-        if(esValida(sup)) {
+        Tuple sup = new Tuple(filaActual,columnaActual);
+        sup.setFila(sup.getFila()-1);
+        if(esValidaEnMatriz(sup)) {
             EstadoMalla superior = new EstadoMalla(matriz, sup);
             estados.add(superior);
-        }else if(esValida(inf)){
+        }
+
+        Tuple inf=new Tuple(filaActual,columnaActual);
+        inf.setFila(inf.getFila()+1);
+        if(esValidaEnMatriz(inf)) {
             EstadoMalla inferior = new EstadoMalla(matriz, inf);
             estados.add(inferior);
-        }else if(esValida(der)){
-            EstadoMalla derecha = new EstadoMalla(matriz, der);
-            estados.add(derecha);
-        }else if (esValida(izq)){
+        }
+        Tuple der=new Tuple(filaActual,columnaActual);
+        der.setColumna(actual.columna+1);
+        if(esValidaEnMatriz(der)){
+                EstadoMalla derecha = new EstadoMalla(matriz, der);
+                estados.add(derecha);
+        }
+
+        Tuple izq=new Tuple(filaActual,columnaActual);
+        izq.setColumna(actual.columna-1);
+        if (esValidaEnMatriz(izq)){
             EstadoMalla izquierda = new EstadoMalla(matriz, izq);
             estados.add(izquierda);
         }
@@ -48,8 +54,9 @@ public class EstadoMalla implements Estado{
         return estados;
     }
 
-    private boolean esValida(Tuple tuple) {
-        return ((tuple.fila>=0 && tuple.fila<=matriz.gFilas) && (tuple.columna>=0 && tuple.columna<=matriz.gColumnas)) && (matriz.gMatrix[tuple.fila][tuple.columna] =='-');
+
+    private boolean esValidaEnMatriz(Tuple tuple) {
+        return ((tuple.fila>=0 && tuple.fila<matriz.gFilas) && (tuple.columna>=0 && tuple.columna<matriz.gColumnas)) && matriz.gMatrix[tuple.getFila()][tuple.getColumna()] == '-';
     }
 
     @Override
@@ -73,6 +80,10 @@ public class EstadoMalla implements Estado{
 
     public int hashCode(){
         return 0;
+    }
+
+    public String toString(){
+        return actual.toString();
     }
 
 }
