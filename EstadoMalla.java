@@ -26,19 +26,20 @@ public class EstadoMalla implements Estado{
         Tuple izq=posicion;
         izq.asign(izq.fila,izq.columna+1);
 
-        if(esHueco(sup) && InMalla(sup)) {
+        if(InMalla(sup) && esHueco(sup)) {
             EstadoMalla superior = new EstadoMalla(malla, sup);
             estados.add(superior);
-        }else if(esHueco(inf) && InMalla(inf)){
+        }else if(InMalla(inf) && esHueco(inf)){
             EstadoMalla inferior = new EstadoMalla(malla, inf);
             estados.add(inferior);
-        }else if(esHueco(der) && InMalla(der)){
+        }else if(InMalla(der) && esHueco(der)){
             EstadoMalla derecha = new EstadoMalla(malla, der);
             estados.add(derecha);
-        }else if (esHueco(izq) && InMalla(izq)){
+        }else if (InMalla(izq) && esHueco(izq)){
             EstadoMalla izquierda = new EstadoMalla(malla, izq);
             estados.add(izquierda);
         }
+
         return estados;
     }
 
@@ -66,7 +67,7 @@ public class EstadoMalla implements Estado{
 
     @Override
     public void ver() {
-
+        System.out.println(posicion.toString());
     }
 
     public boolean equals(){
