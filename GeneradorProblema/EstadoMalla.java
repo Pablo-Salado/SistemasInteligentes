@@ -61,29 +61,28 @@ public class EstadoMalla implements Estado{
 
     @Override
     public int coste(Estado e2) {
-        return 0;
+        return 1;
     }
 
     @Override
     public int h(Estado objetivo) {
-        return 0;
+        return Math.abs(actual.fila- fin.fila)+Math.abs(actual.columna - fin.columna);
     }
 
     @Override
     public void ver() {
-
+        System.out.println(actual.toString());
     }
 
-    public boolean equals(){
-       return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EstadoMalla that = (EstadoMalla) o;
+        return actual.equals(that.actual);
     }
 
     public int hashCode(){
         return 0;
     }
-
-    public String toString(){
-        return actual.toString();
-    }
-
 }
