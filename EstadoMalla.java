@@ -59,7 +59,6 @@ public class EstadoMalla implements Estado{
         return matriz[sucesor.fila][sucesor.columna] == '-';
     }
 
-
     @Override
     public int coste(Estado e2) {
         return 1;
@@ -67,7 +66,8 @@ public class EstadoMalla implements Estado{
 
     @Override
     public int h(Estado objetivo) {
-        return 0;
+        return Math.abs(posicion.fila - ((EstadoMalla) objetivo).posicion.fila) +
+                Math.abs(posicion.columna - ((EstadoMalla) objetivo).posicion.columna);
     }
 
     @Override
