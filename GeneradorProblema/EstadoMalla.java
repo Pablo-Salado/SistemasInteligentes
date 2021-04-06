@@ -66,7 +66,8 @@ public class EstadoMalla implements Estado{
 
     @Override
     public int h(Estado objetivo) {
-        return Math.abs(actual.fila- fin.fila)+Math.abs(actual.columna - fin.columna);
+        EstadoMalla aux = (EstadoMalla) objetivo;
+        return Math.abs(actual.fila - aux.actual.fila) + Math.abs(actual.columna - aux.actual.columna);
     }
 
     @Override
