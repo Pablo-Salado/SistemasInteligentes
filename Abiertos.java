@@ -4,7 +4,6 @@ import java.util.List;
 
 public abstract class Abiertos <E extends Estado>{
     public class NodoAB implements Comparable<NodoAB>
-
     {
         private int f;      //prioridad (estimaci�n de coste)
         private E estado;   //estado
@@ -83,4 +82,9 @@ public abstract class Abiertos <E extends Estado>{
      * @return n�mero de nodos en la lista Abiertos.
      */
     public abstract int size();
+
+    /**
+     * Muestra por pantalla de forma legible el contenido de la lista.
+     */
+    public abstract void ver();
 }
