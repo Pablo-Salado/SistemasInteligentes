@@ -15,6 +15,11 @@ public class testMalla {
         EstadoMalla test = new EstadoMalla(campo,campo.getPosI());
         for(Estado x:test.calculaSucesores()){
             x.ver();
+            if(test.equals(x)){
+                System.out.println("Igual");
+            }else{
+                System.out.println("Diferente");
+            }
         }
         System.out.println(test.h(test));
 

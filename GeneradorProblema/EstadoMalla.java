@@ -2,6 +2,7 @@ package SistemasInteligentes.GeneradorProblema;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EstadoMalla implements Estado{
 
@@ -50,7 +51,6 @@ public class EstadoMalla implements Estado{
             EstadoMalla izquierda = new EstadoMalla(matriz, izq);
             estados.add(izquierda);
         }
-
         return estados;
     }
 
@@ -82,7 +82,8 @@ public class EstadoMalla implements Estado{
         return actual.equals(that.actual);
     }
 
-    public int hashCode(){
-        return 0;
+    @Override
+    public int hashCode() {
+        return Objects.hash(inicio, fin, actual);
     }
 }
