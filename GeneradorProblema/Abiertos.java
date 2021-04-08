@@ -32,10 +32,10 @@ public abstract class Abiertos<E extends Estado> {
         }
 
         /**
-         * M�todo generado autom�ticamente con Eclipse
+         * Metodo generado autom�ticamente con Eclipse
          * Dos nodos son iguales si comparten el mismo estado, independientemente
          * de los otros valores.
-         * Este m�todo es importante para el m�todo remove de Abiertos.
+         * Este metodo es importante para el metodo remove de Abiertos.
          */
 
         @Override
