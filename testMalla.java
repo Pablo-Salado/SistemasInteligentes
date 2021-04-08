@@ -58,7 +58,7 @@ public class testMalla {
         System.out.println(); System.out.println(); System.out.println();
         System.out.println("Insertamos el estado e1");
 
-
+        Iterator it = lista.getList().iterator();
 
 
 

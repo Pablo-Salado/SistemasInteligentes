@@ -5,8 +5,12 @@ import java.util.*;
 public class AbiertosLista extends Abiertos{
     List<NodoAB> list;
     public AbiertosLista(){
-        List<NodoAB> list = new ArrayList<NodoAB>();
+        List<NodoAB> list = new ArrayList<>();
         this.list = list;
+    }
+
+    public List<NodoAB> getList() {
+        return list;
     }
 
     @Override
