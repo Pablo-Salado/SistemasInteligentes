@@ -61,7 +61,6 @@ public class testMalla {
         Iterator it = lista.getList().iterator();
 
 
-
         Estado e1 = new EstadoMalla(campo,new Tuple(0,0));
         lista.offer(e1.h(testf),e1);
         lista.ver();
