@@ -55,4 +55,9 @@ public class AbiertosLista extends Abiertos{
             x.getEstado().ver();
         }
     }
+
+    public void verNodo(NodoAB x){
+        System.out.println(x.getF() + "|");
+        x.getEstado().ver();
+    }
 }
