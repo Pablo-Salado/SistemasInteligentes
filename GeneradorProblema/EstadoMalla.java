@@ -56,7 +56,7 @@ public class EstadoMalla implements Estado{
 
 
     private boolean esValidaEnMatriz(Tuple tuple) {
-        return ((tuple.fila>=0 && tuple.fila<matriz.gFilas) && (tuple.columna>=0 && tuple.columna<matriz.gColumnas)) && matriz.gMatrix[tuple.getFila()][tuple.getColumna()] == '-';
+        return ((tuple.fila>=0 && tuple.fila<matriz.gFilas) && (tuple.columna>=0 && tuple.columna<matriz.gColumnas)) && (matriz.gMatrix[tuple.getFila()][tuple.getColumna()] == '-' || matriz.gMatrix[tuple.getFila()][tuple.getColumna()] == 'F');
     }
 
     @Override
