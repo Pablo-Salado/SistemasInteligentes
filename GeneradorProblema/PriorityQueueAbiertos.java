@@ -4,11 +4,10 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class PriorityQueueAbiertos extends Abiertos{
-    PriorityQueue queue;
+    PriorityQueue<NodoAB> queue;
     public PriorityQueueAbiertos(){
-        PriorityQueue q = new PriorityQueue();
+        PriorityQueue<NodoAB> q = new PriorityQueue();
         queue = q;
-
     }
 
     @Override
@@ -19,13 +18,16 @@ public class PriorityQueueAbiertos extends Abiertos{
     @Override
     public void offer(int f, Estado estado) {
 
+        NodoAB nodo = new NodoAB(f,estado);
+
+            queue.offer(nodo);
+
     }
 
     @Override
     public Estado poll() {
-        Estado aux = (Estado) queue.poll();
-        queue.poll();
-        return aux;
+        NodoAB aux = queue.poll();
+        return aux.getEstado();
     }
 
     @Override
@@ -48,6 +50,10 @@ public class PriorityQueueAbiertos extends Abiertos{
 
     @Override
     public void ver() {
+       for(NodoAB x : queue){
+                System.out.print(x.getF() + "|");
+                x.getEstado().ver();
+       }
 
     }
 }

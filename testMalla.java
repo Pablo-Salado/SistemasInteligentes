@@ -58,6 +58,7 @@ public class testMalla {
         System.out.println("Insertamos el estado e1");
 
         Estado e1 = new EstadoMalla(campo,new Tuple(0,0));
+        Estado e2 = new EstadoMalla(campo,new Tuple(3,1));
         lista.offer(e1.h(testf),e1);
         lista.ver();
         System.out.println(); System.out.println(); System.out.println();
@@ -70,9 +71,32 @@ public class testMalla {
 
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
 
+        queueAbiertos.offer(e1.h(testf), e1);
+        System.out.println("Hemos insertado e1");
+        System.out.println();
+        queueAbiertos.ver();
+        queueAbiertos.offer(borrar1.h(testf), borrar1);
+        System.out.println("Hemos insertado borrar1");
+        System.out.println();
+        queueAbiertos.ver();
+        queueAbiertos.offer(borrar2.h(testf), borrar2);
+        System.out.println("Hemos insertado borrar2");
+        queueAbiertos.ver();
+        System.out.println();
+        queueAbiertos.offer(e2.h(testf), e2);
+        System.out.println("Hemos insertado e2");
+        System.out.println();
+        queueAbiertos.ver();
+
+
+
+        queueAbiertos.poll();
+        System.out.println("Hemos hecho un poll");
+        queueAbiertos.ver();
+
         if(queueAbiertos.isEmpty())
-            System.out.println("Esta vacia");
-        else System.out.println("No esta vacia");
+            System.out.println("La cola esta vacia");
+        else System.out.println("La cola no esta vacia");
 
 
 
