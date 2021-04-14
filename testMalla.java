@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class testMalla {
 
     public static void main(String [] args) {
-        Malla campo = new Malla(20, 5, 3, 4);
+        Malla campo = new Malla(90, 5, 3, 4);
         campo.ver();
         System.out.println("La posición inicial es: " + campo.getPosI());
         System.out.println("La posición final es: " + campo.getPosF());
@@ -31,8 +31,7 @@ public class testMalla {
         else
             System.out.println("FALSE");
         EstadoMalla Estado = new EstadoMalla(campo, campo.getPosI());
-        int h = Estado.h(testf);
-        lista.offer(h,Estado);
+
 
         if(lista.isEmpty())
             System.out.println("TRUE");
@@ -58,9 +57,6 @@ public class testMalla {
         System.out.println(); System.out.println(); System.out.println();
         System.out.println("Insertamos el estado e1");
 
-        Iterator it = lista.getList().iterator();
-
-
         Estado e1 = new EstadoMalla(campo,new Tuple(0,0));
         lista.offer(e1.h(testf),e1);
         lista.ver();
@@ -68,6 +64,17 @@ public class testMalla {
         System.out.println("Borramos el estado e1");
         lista.remove(e1);
         lista.ver();
+
+        System.out.println();System.out.println();System.out.println();System.out.println();
+        System.out.println("Prueba PriorityQueue");
+
+        PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
+
+        if(queueAbiertos.isEmpty())
+            System.out.println("Esta vacia");
+        else System.out.println("No esta vacia");
+
+
 
     }
 }
