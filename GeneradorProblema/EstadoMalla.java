@@ -75,9 +75,8 @@ public class EstadoMalla implements Estado{
         System.out.println(actual.toString());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
+    public boolean equals(EstadoMalla o) {
+        if (this.actual == o.actual) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EstadoMalla that = (EstadoMalla) o;
         return actual.equals(that.actual);
