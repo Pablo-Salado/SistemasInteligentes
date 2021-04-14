@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 
 public class PriorityQueueAbiertos extends Abiertos{
     PriorityQueue queue;
+
     public PriorityQueueAbiertos(){
         PriorityQueue q = new PriorityQueue();
         queue = q;
@@ -21,7 +22,7 @@ public class PriorityQueueAbiertos extends Abiertos{
 
     @Override
     public Estado poll() {
-        Estado aux = (Estado) queue.poll();
+        Estado aux = (Estado) queue;
         queue.poll(); //borratodo
         return aux;
     }
