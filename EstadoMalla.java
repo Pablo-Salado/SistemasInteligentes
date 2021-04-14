@@ -75,9 +75,12 @@ public class EstadoMalla implements Estado{
         System.out.println(posicion.toString());
     }
 
-    public boolean equals(EstadoMalla e2){
+    @Override
+    public boolean equals(Estado obj) {
+        EstadoMalla e2 = (EstadoMalla) obj;
         return posicion.fila == e2.posicion.fila && posicion.columna == e2.posicion.columna;
     }
+
 
     public int hashCode(){
         return 0;
