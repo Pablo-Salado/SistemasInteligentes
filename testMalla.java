@@ -15,7 +15,7 @@ public class testMalla {
         for(Estado estadoActual:estadoInicial.calculaSucesores()){
             estadoActual.ver();
             System.out.println(estadoActual.h(estadoFinal));
-            if(estadoFinal.equals(estadoActual)){
+            if(estadoActual.equals(estadoFinal)){
                 System.out.println("Igual");
             }else{
                 System.out.println("Diferente");
@@ -43,7 +43,7 @@ public class testMalla {
         else
             System.out.println("FALSE");
 
-        lista.poll();
+        lista.poll(); //borra el primer elemento de la lista
 
         for(Estado x : estadoInicial.calculaSucesores()){
             lista.offer(x.h(estadoFinal),x);
