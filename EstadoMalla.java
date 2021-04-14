@@ -76,7 +76,7 @@ public class EstadoMalla implements Estado{
     }
 
     public boolean equals(EstadoMalla e2){
-        return posicion == e2.posicion;
+        return posicion.fila == e2.posicion.fila && posicion.columna == e2.posicion.columna;
     }
 
     public int hashCode(){
