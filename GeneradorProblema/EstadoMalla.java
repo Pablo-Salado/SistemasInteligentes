@@ -75,11 +75,11 @@ public class EstadoMalla implements Estado{
         System.out.println(actual.toString());
     }
 
-    public boolean equals(EstadoMalla o) {
-        if (this.actual == o.actual) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EstadoMalla that = (EstadoMalla) o;
-        return actual.equals(that.actual);
+    @Override
+    public boolean equals(Estado o) {
+        EstadoMalla e2 = (EstadoMalla) o;
+        if (e2 == null || getClass() != e2.getClass()) return false;
+        return (this.actual.getColumna() == e2.actual.getColumna() && this.actual.getFila() == e2.actual.getFila());
     }
 
     @Override

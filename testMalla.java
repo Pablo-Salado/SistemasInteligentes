@@ -32,6 +32,7 @@ public class testMalla {
             System.out.println("FALSE");
         EstadoMalla Estado = new EstadoMalla(campo, campo.getPosI());
 
+        Estado w = (EstadoMalla) testf;
 
         if(lista.isEmpty())
             System.out.println("TRUE");
@@ -40,6 +41,9 @@ public class testMalla {
 
         for(Estado x : test.calculaSucesores()){
             lista.offer(x.h(testf),x);
+            if(x.equals(w))
+                System.out.println("Iguales");
+            else System.out.println("Distintos");
         }
 
         lista.ver();

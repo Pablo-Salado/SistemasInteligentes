@@ -30,5 +30,8 @@ public interface Estado {
      * como clave en un HashMap
      */
     public boolean equals(Object obj);
+
+    boolean equals(Estado o);
+
     public int hashCode();
 }

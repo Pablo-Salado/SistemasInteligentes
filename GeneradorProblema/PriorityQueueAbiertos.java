@@ -1,12 +1,13 @@
 package SistemasInteligentes.GeneradorProblema;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class PriorityQueueAbiertos extends Abiertos{
-    PriorityQueue queue;
+    PriorityQueue<NodoAB> queue;
     public PriorityQueueAbiertos(){
-        PriorityQueue q = new PriorityQueue();
+        PriorityQueue<NodoAB> q = new PriorityQueue();
         queue = q;
 
     }
@@ -24,7 +25,6 @@ public class PriorityQueueAbiertos extends Abiertos{
     @Override
     public Estado poll() {
         Estado aux = (Estado) queue.poll();
-        queue.poll();
         return aux;
     }
 
