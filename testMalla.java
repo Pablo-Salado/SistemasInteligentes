@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class testMalla {
 
     public static void main(String [] args) {
-        Malla campo = new Malla(1, 4, 4, 4);
+        Malla campo = new Malla(90, 5, 3, 4);
         campo.ver();
         System.out.println();
 

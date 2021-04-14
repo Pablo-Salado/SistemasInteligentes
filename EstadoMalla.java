@@ -56,7 +56,7 @@ public class EstadoMalla implements Estado{
     private boolean esHueco (Tuple sucesor) {
         char[][] matriz;
         matriz = malla.getgMatrix();
-        return matriz[sucesor.fila][sucesor.columna] == '-';
+        return matriz[sucesor.fila][sucesor.columna] == '-' || matriz[sucesor.fila][sucesor.columna] == 'F';
     }
 
     @Override
