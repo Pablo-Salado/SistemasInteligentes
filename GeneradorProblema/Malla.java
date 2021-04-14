@@ -1,6 +1,5 @@
-package SistemasInteligentes;
+package SistemasInteligentes.GeneradorProblema;
 
-import java.util.List;
 import java.util.Random;
 
 public class Malla{
