@@ -31,6 +31,6 @@ public interface Estado {
      * Los m�todos equals y hashcode son necesarios para poder utilizar los estados
      * como clave en un HashMap
      */
-    public boolean equals(Object obj);
+    public boolean equals(Estado obj);
     public int hashCode();
 }

@@ -22,7 +22,7 @@ public class PriorityQueueAbiertos extends Abiertos{
     @Override
     public Estado poll() {
         Estado aux = (Estado) queue.poll();
-        queue.poll();
+        queue.poll(); //borratodo
         return aux;
     }
 
