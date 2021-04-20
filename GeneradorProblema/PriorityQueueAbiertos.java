@@ -18,16 +18,22 @@ public class PriorityQueueAbiertos extends Abiertos{
 
     @Override
     public void offer(int f, Estado estado) {
-
+        NodoAB nab = new NodoAB(f,estado);
+        if(queue.isEmpty())
+            queue.add(nab);
+        else{
+            queue.offer(nab);
+        }
     }
 
     @Override
     public Estado poll() {
-        Estado aux = (Estado) queue.poll();
-        return aux;
+        NodoAB aux = queue.poll();
+        return aux.getEstado();
     }
 
     @Override
+    //Todo
     public void remove(Estado estado) {
         Iterator it = queue.iterator();
         int i = 0;
@@ -42,11 +48,14 @@ public class PriorityQueueAbiertos extends Abiertos{
 
     @Override
     public int size() {
-        return 0;
+        return queue.size();
     }
 
     @Override
     public void ver() {
-
+        for (NodoAB x : queue) {
+            System.out.print(x.getF() + "|");
+            x.getEstado().ver();
+        }
     }
 }
