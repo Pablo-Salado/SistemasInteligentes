@@ -9,7 +9,6 @@ public class PriorityQueueAbiertos extends Abiertos{
     public PriorityQueueAbiertos(){
         PriorityQueue<NodoAB> q = new PriorityQueue();
         queue = q;
-
     }
 
     @Override
