@@ -74,10 +74,20 @@ public class testMalla {
 
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
 
+        queueAbiertos.offer(2,test);
+        queueAbiertos.offer(19,test);
+        queueAbiertos.offer(12,test);
+        queueAbiertos.offer(1,test);
+
+        queueAbiertos.offer(7,test);
+        queueAbiertos.offer(e1.h(testf),e1);
+
         if(queueAbiertos.isEmpty())
             System.out.println("Esta vacia");
         else System.out.println("No esta vacia");
 
+        System.out.println(queueAbiertos.size());
+        queueAbiertos.ver();
 
 
     }
