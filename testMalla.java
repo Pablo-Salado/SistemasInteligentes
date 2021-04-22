@@ -76,5 +76,21 @@ public class testMalla {
         lista.remove(e1);
         lista.ver();
 
+        PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
+
+        queueAbiertos.offer(2,estadoInicial);
+        queueAbiertos.offer(19,estadoInicial);
+        queueAbiertos.offer(12,estadoInicial);
+        queueAbiertos.offer(1,estadoInicial);
+
+        queueAbiertos.offer(7,estadoInicial);
+        queueAbiertos.offer(e1.h(estadoFinal),e1);
+
+        if(queueAbiertos.isEmpty())
+            System.out.println("Esta vacia");
+        else System.out.println("No esta vacia");
+
+        System.out.println(queueAbiertos.size());
+        queueAbiertos.ver();
     }
 }
