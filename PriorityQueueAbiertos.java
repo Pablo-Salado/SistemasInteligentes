@@ -17,14 +17,18 @@ public class PriorityQueueAbiertos extends Abiertos{
 
     @Override
     public void offer(int f, Estado estado) {
-
+        NodoAB nab = new NodoAB(f,estado);
+        if(queue.isEmpty())
+            queue.add(nab);
+        else{
+            queue.offer(nab);
+        }
     }
 
     @Override
     public Estado poll() {
-        Estado aux = (Estado) queue;
-        queue.poll(); //borratodo
-        return aux;
+        NodoAB aux = (NodoAB) queue.poll();
+        return aux.getEstado();
     }
 
     @Override
@@ -42,11 +46,14 @@ public class PriorityQueueAbiertos extends Abiertos{
 
     @Override
     public int size() {
-        return 0;
+        return queue.size();
     }
 
     @Override
     public void ver() {
-
+        for (NodoAB x : queue) {
+            System.out.print(x.getF() + "|");
+            x.getEstado().ver();
+        }
     }
 }
