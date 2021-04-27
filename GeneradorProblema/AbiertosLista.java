@@ -2,7 +2,7 @@ package SistemasInteligentes.GeneradorProblema;
 
 import java.util.*;
 
-public class AbiertosLista extends Abiertos{
+public class AbiertosLista<E> extends Abiertos{
     List<NodoAB> list;
     public AbiertosLista(){
         List<NodoAB> list = new ArrayList<>();

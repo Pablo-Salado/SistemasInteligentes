@@ -3,8 +3,6 @@ package SistemasInteligentes;
 import SistemasInteligentes.GeneradorProblema.*;
 import SistemasInteligentes.GeneradorProblema.Arbol;
 
-import java.util.Iterator;
-
 public class testMalla {
 
     public static void main(String [] args) {
@@ -102,7 +100,14 @@ public class testMalla {
 
         arbol.put(n);
         arbol.put(n2);
-        
+
+        if(arbol.containsKey(borrar1))
+            System.out.println("Esta dentro pishita");
+        else
+            System.out.println("Esto no furula");
+
+
+
 
         arbol.ver();
 

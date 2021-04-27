@@ -1,20 +1,22 @@
 package SistemasInteligentes.AlgoritmoBusqueda;
 
-import SistemasInteligentes.GeneradorProblema.Estado;
+import SistemasInteligentes.GeneradorProblema.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+  /*
 public class AgenteA{
 
-    /**
+
      * Resuelve un problema dado el estado inicial y el objetivo.
      *
-     */
-   /* public List<Estado> resuelve(Estado salida, Estado objetivo){
 
-        Arbol<Estado> arbol = new ArbolL<Estado>();
-        Abiertos<Estado> abiertos = new AbiertosL<Estado>();
+
+  public List<Estado> resuelve(Estado salida, Estado objetivo){
+
+        Arbol<Estado> arbol = new LinkedLista<Estado>();
+        Abiertos<Estado> abiertos = new AbiertosLista<Estado>();
 
         Estado e = salida;
         Nodo n = new Nodo(e, 0, null);
@@ -65,5 +67,8 @@ public class AgenteA{
         }//while
 
         return solucion;
-    }*/
+    }
 }
+
+
+      */
