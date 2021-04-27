@@ -19,7 +19,6 @@ public class LinkedLista<E> extends Arbol{
 
         boolean res = false;
         while(i < lista.size() && !res){
-
             if(lista.get(i).e.equals(estado))
                 res = true;
             else

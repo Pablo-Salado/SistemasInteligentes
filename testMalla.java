@@ -26,6 +26,8 @@ public class testMalla {
         System.out.println(estadoInicial.h(estadoFinal));
         System.out.println();
 
+
+
         listaAbiertos lista = new listaAbiertos();
 
         if(lista.isEmpty()){
@@ -76,6 +78,8 @@ public class testMalla {
         lista.remove(e1);
         lista.ver();
 
+
+
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
 
         queueAbiertos.offer(2,estadoInicial);
@@ -92,5 +96,25 @@ public class testMalla {
 
         System.out.println(queueAbiertos.size());
         queueAbiertos.ver();
+
+
+
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Prueba LinkedLista");
+
+        Arbol<Estado> arbol = new LinkedLista<Estado>();
+        Nodo n = new Nodo(estadoFinal, 0, null);
+        Nodo n2 = new Nodo(e1, e1.h(estadoFinal), null);
+
+        arbol.put(n);
+        arbol.put(n2);
+
+        if(arbol.containsKey(borrar2))
+            System.out.println("Esta dentro pishita");
+        else
+            System.out.println("Esto no furula");
+
+        arbol.ver();
     }
+
 }
