@@ -101,10 +101,19 @@ public class testMalla {
         arbol.put(n);
         arbol.put(n2);
 
-        if(arbol.containsKey(borrar1))
+        Estado pepe = new EstadoMalla(campo, new Tuple(1,1));
+
+
+        if(arbol.containsKey(testf))
             System.out.println("Esta dentro pishita");
         else
-            System.out.println("Esto no furula");
+            System.out.println("No esta dentro");
+
+        System.out.println("Prueba GET");
+        arbol.get(testf).getEstado().ver();
+
+
+        System.out.println("Prueba Ver");
 
 
 

@@ -18,10 +18,12 @@ public class LinkedLista<E> extends Arbol{
     public boolean containsKey(Estado estado) {
         int i = 0;
 
+        Nodo prueba = null;
         boolean res = false;
         while(i < lista.size() && !res){
 
-            if(lista.get(i).e.equals(estado))
+           prueba = lista.get(i);
+            if(prueba.e.equals(estado))
                 res = true;
             else
             i++;
@@ -35,6 +37,7 @@ public class LinkedLista<E> extends Arbol{
         int i = 0;
         boolean res = false;
         Nodo resNodo = null;
+
         while(i < lista.size() && !res){
 
             if(lista.get(i).e.equals(estado)){
@@ -44,16 +47,13 @@ public class LinkedLista<E> extends Arbol{
                     i++;
             }
         }
-
         return resNodo;
     }
-
     //Imprime el contenido de la lista
     @Override
     public void ver() {
         for(Nodo x : lista){
             x.getEstado().ver();
         }
-
     }
 }
