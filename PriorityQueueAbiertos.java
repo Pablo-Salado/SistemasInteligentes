@@ -4,10 +4,10 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class PriorityQueueAbiertos extends Abiertos{
-    PriorityQueue queue;
+    PriorityQueue<NodoAB> queue;
 
     public PriorityQueueAbiertos(){
-        PriorityQueue q = new PriorityQueue();
+        PriorityQueue<NodoAB> q = new PriorityQueue();
         queue = q;
     }
     @Override
