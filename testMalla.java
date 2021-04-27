@@ -1,6 +1,7 @@
 package SistemasInteligentes;
 
 import SistemasInteligentes.GeneradorProblema.*;
+import SistemasInteligentes.GeneradorProblema.Arbol;
 
 import java.util.Iterator;
 
@@ -67,36 +68,46 @@ public class testMalla {
         lista.ver();
 
         System.out.println();System.out.println();System.out.println();System.out.println();
+      /*
         System.out.println("Prueba PriorityQueue");
 
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
-
-        queueAbiertos.offer(e1.h(testf), e1);
-        System.out.println("Hemos insertado e1");
-        System.out.println();
+        queueAbiertos.offer(2,test);
         queueAbiertos.ver();
-        queueAbiertos.offer(borrar1.h(testf), borrar1);
-        System.out.println("Hemos insertado borrar1");
-        System.out.println();
-        queueAbiertos.ver();
-        queueAbiertos.offer(borrar2.h(testf), borrar2);
-        System.out.println("Hemos insertado borrar2");
-        queueAbiertos.ver();
-        System.out.println();
-        queueAbiertos.offer(e2.h(testf), e2);
-        System.out.println("Hemos insertado e2");
-        System.out.println();
-        queueAbiertos.ver();
+        queueAbiertos.remove(test);
 
 
+        queueAbiertos.offer(19,test);
+        queueAbiertos.offer(12,test);
+        queueAbiertos.offer(1,test);
 
-        queueAbiertos.poll();
-        System.out.println("Hemos hecho un poll");
+        queueAbiertos.offer(7,test);
+        queueAbiertos.offer(e1.h(testf),e1);
         queueAbiertos.ver();
+
 
         if(queueAbiertos.isEmpty())
-            System.out.println("La cola esta vacia");
-        else System.out.println("La cola no esta vacia");
+            System.out.println("Esta vacia");
+        else System.out.println("No esta vacia");
+
+        System.out.println(queueAbiertos.size());
+        queueAbiertos.ver();
+*/
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Prueba LinkedLista");
+
+        Arbol<Estado> arbol = new LinkedLista<Estado>();
+        Nodo n = new Nodo(testf, 0, null);
+        Nodo n2 = new Nodo(e1, e1.h(testf), null);
+
+        arbol.put(n);
+        arbol.put(n2);
+        
+
+        arbol.ver();
+
+
+
 
 
 
