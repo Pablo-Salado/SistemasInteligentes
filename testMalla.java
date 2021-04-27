@@ -68,26 +68,36 @@ public class testMalla {
         System.out.println("Borramos el estado e1");
         lista.remove(e1);
         lista.ver();
+        System.out.println();System.out.println();System.out.println();System.out.println();
+        System.out.println("Prueba Equals()");
+
+        if(e1.equals(new EstadoMalla(campo,new Tuple(0,0))))
+            System.out.println("Son el mismo");
+        else{
+            System.out.println("no lo son");
+        }
+
 
         System.out.println();System.out.println();System.out.println();System.out.println();
         System.out.println("Prueba PriorityQueue");
 
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
 
-        queueAbiertos.offer(2,test);
-        queueAbiertos.offer(19,test);
-        queueAbiertos.offer(12,test);
-        queueAbiertos.offer(1,test);
-
-        queueAbiertos.offer(7,test);
         queueAbiertos.offer(e1.h(testf),e1);
+
 
         if(queueAbiertos.isEmpty())
             System.out.println("Esta vacia");
         else System.out.println("No esta vacia");
+        System.out.println();System.out.println();System.out.println();System.out.println();
+        queueAbiertos.ver();
+
+        queueAbiertos.remove(e1);
 
         System.out.println(queueAbiertos.size());
-        queueAbiertos.ver();
+
+        System.out.println();System.out.println();System.out.println();System.out.println();
+        System.out.println("Prueba Hito 4");
 
 
     }

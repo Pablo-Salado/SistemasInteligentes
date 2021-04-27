@@ -36,14 +36,12 @@ public class PriorityQueueAbiertos extends Abiertos{
     //Todo
     public void remove(Estado estado) {
         Iterator it = queue.iterator();
-        int i = 0;
-        while (it.hasNext() && !(it.equals(estado))){
-            i++;
-            it.next();
-        }
-        if(i>=queue.size()){
-            throw new RuntimeException("Estado no encontrado");
-        }else queue.remove(it);
+       while (it.hasNext() && !(it.equals(estado))){
+           it.next();
+       }
+       if(it.equals(estado)){
+            queue.remove(it);
+       }
     }
 
     @Override
