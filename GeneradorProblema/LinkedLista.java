@@ -18,12 +18,12 @@ public class LinkedLista<E> extends Arbol{
     public boolean containsKey(Estado estado) {
         int i = 0;
 
-        Nodo prueba = null;
+        Nodo X = null;
         boolean res = false;
         while(i < lista.size() && !res){
 
-           prueba = lista.get(i);
-            if(prueba.e.equals(estado))
+           X = lista.get(i);
+            if(X.e.equals(estado))
                 res = true;
             else
             i++;
