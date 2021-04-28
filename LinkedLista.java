@@ -12,7 +12,7 @@ public class LinkedLista<E> extends Arbol{
         lista.add(nodo);
     }
 
-    //True si e arbol contiene el estado indicado, false en otro caso
+    //True si el arbol contiene el estado indicado, false en otro caso
     @Override
     public boolean containsKey(Estado estado) {
         int i = 0;
