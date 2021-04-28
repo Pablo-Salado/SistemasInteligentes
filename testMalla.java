@@ -105,7 +105,7 @@ public class testMalla {
 
 
         if(arbol.containsKey(testf))
-            System.out.println("Esta dentro pishita");
+            System.out.println("Esta dentro");
         else
             System.out.println("No esta dentro");
 
