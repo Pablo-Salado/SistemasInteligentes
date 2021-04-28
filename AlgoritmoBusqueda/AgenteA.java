@@ -5,12 +5,12 @@ import SistemasInteligentes.GeneradorProblema.*;
 import java.util.ArrayList;
 import java.util.List;
 
-  /*
+
 public class AgenteA{
 
 
-     * Resuelve un problema dado el estado inicial y el objetivo.
-     *
+     // Resuelve un problema dado el estado inicial y el objetivo.
+
 
 
   public List<Estado> resuelve(Estado salida, Estado objetivo){
@@ -70,5 +70,3 @@ public class AgenteA{
     }
 }
 
-
-      */
