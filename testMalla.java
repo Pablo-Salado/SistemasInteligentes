@@ -98,9 +98,13 @@ public class testMalla {
         queueAbiertos.offer(7,estadoInicial);
         queueAbiertos.offer(e1.h(estadoFinal),e1);
 
+        queueAbiertos.ver();
+
         if(queueAbiertos.isEmpty())
             System.out.println("Esta vacia");
         else System.out.println("No esta vacia");
+
+        queueAbiertos.remove(e1);
 
         System.out.println(queueAbiertos.size());
         queueAbiertos.ver();

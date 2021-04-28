@@ -3,7 +3,7 @@ package SistemasInteligentes;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
-public class PriorityQueueAbiertos extends Abiertos{
+public class PriorityQueueAbiertos<E> extends Abiertos{
     PriorityQueue<NodoAB> queue;
 
     public PriorityQueueAbiertos(){

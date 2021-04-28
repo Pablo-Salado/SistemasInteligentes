@@ -15,5 +15,7 @@ public class testAgenteA {
         for(Estado x : agenteA.resuelve(estadoInicial, estadoFinal)){
             x.ver();
         }
+        System.out.print("time in seconds = ");
+        System.out.println(System.nanoTime() * 0.000000001);
     }
 }
