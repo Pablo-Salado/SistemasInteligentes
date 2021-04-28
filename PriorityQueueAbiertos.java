@@ -42,6 +42,8 @@ public class PriorityQueueAbiertos<E> extends Abiertos{
         if(i>=queue.size()){
             throw new RuntimeException("Estado no encontrado");
         }else queue.remove(it);
+
+
     }
 
     @Override
