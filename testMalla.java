@@ -8,6 +8,9 @@ public class testMalla {
         Malla campo = new Malla(90, 5, 3, 4);
         campo.ver();
         System.out.println();
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Prueba EstadoMalla");
+        System.out.println();
 
         EstadoMalla estadoInicial = new EstadoMalla(campo, campo.getPosI());
         EstadoMalla estadoFinal = new EstadoMalla(campo, campo.getPosF());
@@ -26,7 +29,9 @@ public class testMalla {
         System.out.println(estadoInicial.h(estadoFinal));
         System.out.println();
 
-
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Prueba listaAbiertos");
+        System.out.println();
 
         listaAbiertos lista = new listaAbiertos();
 
@@ -56,6 +61,7 @@ public class testMalla {
         lista.ver();
         System.out.println();
 
+        /*
         Estado borrar1 = lista.poll();
         Estado borrar2 = lista.poll();
 
@@ -64,7 +70,7 @@ public class testMalla {
 
         System.out.print("Vamos a borrar el estado:");
         borrar2.ver();
-
+    */
         System.out.println();
         lista.ver();
         System.out.println();
@@ -78,7 +84,9 @@ public class testMalla {
         lista.remove(e1);
         lista.ver();
 
-
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Prueba PriorityQueue");
+        System.out.println();
 
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
 
@@ -97,10 +105,10 @@ public class testMalla {
         System.out.println(queueAbiertos.size());
         queueAbiertos.ver();
 
-
-
+        System.out.println();
         System.out.println("---------------------------------------------------------------");
         System.out.println("Prueba LinkedLista");
+        System.out.println();
 
         Arbol<Estado> arbol = new LinkedLista<Estado>();
         Nodo n = new Nodo(estadoFinal, 0, null);
@@ -109,12 +117,13 @@ public class testMalla {
         arbol.put(n);
         arbol.put(n2);
 
-        if(arbol.containsKey(borrar2))
+        if(arbol.containsKey(estadoFinal))
             System.out.println("Esta dentro pishita");
         else
             System.out.println("Esto no furula");
 
         arbol.ver();
-    }
 
+
+    }
 }
