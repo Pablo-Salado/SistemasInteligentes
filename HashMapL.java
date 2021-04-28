@@ -22,6 +22,8 @@ public class HashMapL<E> extends Arbol{
 
     @Override
     public void ver() {
-
+        for(Estado x : hashMap.keySet()){
+            x.ver();
+        }
     }
 }

@@ -118,12 +118,27 @@ public class testMalla {
         arbol.put(n2);
 
         if(arbol.containsKey(estadoFinal))
-            System.out.println("Esta dentro pishita");
+            System.out.println("Esta dentro");
         else
-            System.out.println("Esto no furula");
+            System.out.println("Esto fuera");
 
         arbol.ver();
 
+        System.out.println();
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Prueba HashMap");
+        System.out.println();
 
+        Arbol<Estado> arbol1 = new HashMapL<Estado>();
+
+        arbol1.put(n);
+        arbol1.put(n2);
+
+        if(arbol1.containsKey(estadoFinal))
+            System.out.println("Esta dentro");
+        else
+            System.out.println("Esto fuera");
+
+        arbol1.ver();
     }
 }
