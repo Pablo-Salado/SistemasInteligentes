@@ -15,7 +15,7 @@ public class Nodo<E extends Estado>{
         return this.e;
     }
 
-    public int getG() {
+    public Integer getG() {
         return this.g;
     }
 
