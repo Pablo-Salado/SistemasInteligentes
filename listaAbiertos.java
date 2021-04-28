@@ -3,7 +3,7 @@ package SistemasInteligentes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class listaAbiertos extends Abiertos{
+public class listaAbiertos<E> extends Abiertos{
     List<NodoAB> list;
 
     public listaAbiertos(){

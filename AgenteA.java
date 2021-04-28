@@ -6,15 +6,22 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class AgenteA {
+/**
+ * @authos L. Mandow
+ * @date   11/marzo/2021
+ * Agente resolutor de problemas usando A*.
+ */
+
+public class AgenteA{
+
     /**
      * Resuelve un problema dado el estado inicial y el objetivo.
      *
      */
-    /*public List<Estado> resuelve(Estado salida, Estado objetivo){
+    public List<Estado> resuelve(Estado salida, Estado objetivo){
 
-        Arbol<Estado> arbol = new ArbolL<Estado>();
-        Abiertos<Estado> abiertos = new AbiertosL<Estado>();
+        Arbol<Estado> arbol = new LinkedLista<Estado>();
+        Abiertos<Estado> abiertos = new listaAbiertos<Estado>();
 
         Estado e = salida;
         Nodo n = new Nodo(e, 0, null);
@@ -32,7 +39,7 @@ public class AgenteA {
                 for(Estado e2: e.calculaSucesores()){
                     int nuevoCoste = ge + e.coste(e2);
 
-                    if (!arbol.containsKey(e2)){	//nuevo nodo: simplemente a�adimos e2 al �rboly a abiertos
+                    if (!arbol.containsKey(e2)){	//nuevon nodo: simplemente a�adimos e2 al �rboly a abiertos
                         arbol.put(new Nodo(e2, nuevoCoste, n));
                         abiertos.offer(nuevoCoste + e2.h(objetivo),  e2);
                     } else {
@@ -65,5 +72,5 @@ public class AgenteA {
         }//while
 
         return solucion;
-    }*/
+    }
 }
