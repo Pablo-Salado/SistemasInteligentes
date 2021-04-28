@@ -14,15 +14,6 @@ public class testMalla {
         EstadoMalla testf = new EstadoMalla(campo, campo.getPosF());
         EstadoMalla test = new EstadoMalla(campo,campo.getPosI());
 
-       /* for(Estado x:test.calculaSucesores()){
-            x.ver();
-            System.out.println(x.h(test));
-            if(test.equals(x)){
-                System.out.println("Igual");
-            }else{
-                System.out.println("Diferente");
-            }
-        }*/
 
         AbiertosLista lista = new AbiertosLista();
         if(lista.isEmpty())
@@ -66,13 +57,13 @@ public class testMalla {
         lista.ver();
 
         System.out.println();System.out.println();System.out.println();System.out.println();
-      /*
+
         System.out.println("Prueba PriorityQueue");
 
         PriorityQueueAbiertos queueAbiertos = new PriorityQueueAbiertos();
         queueAbiertos.offer(2,test);
         queueAbiertos.ver();
-        queueAbiertos.remove(test);
+
 
 
         queueAbiertos.offer(19,test);
@@ -90,7 +81,7 @@ public class testMalla {
 
         System.out.println(queueAbiertos.size());
         queueAbiertos.ver();
-*/
+
         System.out.println("---------------------------------------------------------------");
         System.out.println("Prueba LinkedLista");
 
@@ -101,7 +92,7 @@ public class testMalla {
         arbol.put(n);
         arbol.put(n2);
 
-        Estado pepe = new EstadoMalla(campo, new Tuple(1,1));
+        Estado Prueba = new EstadoMalla(campo, new Tuple(1,1));
 
 
         if(arbol.containsKey(testf))

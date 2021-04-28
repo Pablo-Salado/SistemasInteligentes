@@ -40,7 +40,8 @@ public class PriorityQueueAbiertos extends Abiertos{
             it.next();
         }
         if(i>=queue.size()){
-            throw new RuntimeException("Estado no encontrado");
+            System.out.println("No se encontro el elemento ");
+            estado.ver();
         }else queue.remove(it);
     }
 

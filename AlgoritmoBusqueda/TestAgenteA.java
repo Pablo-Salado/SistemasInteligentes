@@ -14,6 +14,10 @@ public class TestAgenteA {
 
 
     public static void main(String [] args){
+
+        long inicio = System.currentTimeMillis();
+
+
         Malla campo = new Malla(6, 5, 3, 4);
         campo.ver();
 
@@ -42,6 +46,12 @@ public class TestAgenteA {
             }
         }
 
+
+        long fin = System.currentTimeMillis();
+
+        long res = fin - inicio;
+
+        System.out.println(res + "ms");
 
     }
 
