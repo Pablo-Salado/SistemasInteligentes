@@ -13,8 +13,8 @@ public class AgenteA{
      */
    public List<Estado> resuelve(Estado salida, Estado objetivo){
 
-        Arbol<Estado> arbol = new LinkedLista<>();
-        Abiertos<Estado> abiertos = new AbiertosLista();
+        Arbol<Estado> arbol = new HashMapL<>();
+        Abiertos<Estado> abiertos = new PriorityQueueAbiertos();
 
         Estado e = salida;
         Nodo n = new Nodo(e, 0, null);

@@ -2,26 +2,27 @@ package SistemasInteligentes.GeneradorProblema;
 
 import java.util.HashMap;
 
-public class HashMapL<Estado> extends Arbol {
-    HashMap<Nodo,Integer> map = new HashMap();
+public class HashMapL<E> extends Arbol {
+    HashMap<Estado,Nodo> map = new HashMap();
 
     @Override
     public void put(Nodo nodo) {
-        map.put(nodo,nodo.getG());
+        map.put(nodo.getEstado(),nodo);
     }
 
     @Override
-    public boolean containsKey(SistemasInteligentes.GeneradorProblema.Estado estado) {
-        return false;
+    public boolean containsKey(Estado estado) {
+        return map.containsKey(estado);
     }
 
     @Override
-    public Nodo get(SistemasInteligentes.GeneradorProblema.Estado estado) {
-        return null;
+    public Nodo get(Estado estado) {
+        return map.get(estado);
     }
+
 
     @Override
     public void ver() {
-
+        map.forEach((Estado,Nodo) -> System.out.println("Key:"+Estado.toString()+"Value: "+Nodo.g));
     }
 }

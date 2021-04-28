@@ -9,11 +9,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestAgenteA {
 
 
     public static void main(String [] args){
+        long start = System.currentTimeMillis();
         Malla campo = new Malla(6, 5, 3, 4);
         campo.ver();
 
@@ -41,6 +43,10 @@ public class TestAgenteA {
                 }
             }
         }
+        long end = System.currentTimeMillis();
+        long res = end - start;
+
+        System.out.println("Tiempo necesario = "+res+"ms");
 
 
     }

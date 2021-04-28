@@ -99,6 +99,17 @@ public class testMalla {
         System.out.println();System.out.println();System.out.println();System.out.println();
         System.out.println("Prueba Hito 4");
 
+        Nodo<Estado> n1 = new Nodo<>(e1,e1.h(testf),null);
+        Nodo<Estado> n2 = new Nodo<>(test,test.h(testf),null);
+        Nodo<Estado> n3 = new Nodo<>(testf,testf.h(testf),null);
+        Estado w1 = new EstadoMalla(campo,new Tuple(2,1));
+
+
+        HashMapL<Estado> mapL = new HashMapL<>();
+        mapL.put(n1);
+        mapL.put(n2);
+        mapL.ver();
+
 
     }
 }
