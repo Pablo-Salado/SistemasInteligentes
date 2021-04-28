@@ -3,6 +3,12 @@ package SistemasInteligentes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author L.Mandow
+ * @date 2021-03-11
+ * Interfaz para clases que representan espacios de estados
+ */
+
 public interface Estado {
     /**
      * @return lista con los estados sucesores inmediatos del estado actual en el espacio de estados

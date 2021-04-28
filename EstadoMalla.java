@@ -3,6 +3,14 @@ package SistemasInteligentes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author L.Mandow
+ * @date  2021-03-11
+ *
+ * Plantilla para representar los estados de la pr�ctica
+ *
+ */
+
 public class EstadoMalla implements Estado{
 
     private static Malla malla;

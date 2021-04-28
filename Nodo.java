@@ -1,5 +1,15 @@
 package SistemasInteligentes;
 
+/**
+ *
+ * @author Lawrence Mandow
+ * @date   2021-03-08
+ *
+ * Nodo del �rbol de b�squeda.
+ * Se compone del estado, valor g, y el puntero a su nodo padre (null si es la ra�z).
+ *
+ */
+
 public class Nodo<E extends Estado>{
     E e;
     int g;
