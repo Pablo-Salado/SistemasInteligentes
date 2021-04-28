@@ -1,13 +1,13 @@
 package SistemasInteligentes;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class listaAbiertos<E> extends Abiertos{
     List<NodoAB> list;
 
     public listaAbiertos(){
-        List<NodoAB> list = new ArrayList<>();
+        List<NodoAB> list = new LinkedList<>();
         this.list = list;
     }
 
