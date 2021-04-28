@@ -91,7 +91,7 @@ public class EstadoMalla implements Estado{
 
 
     public int hashCode(){
-        return 0;
+        return posicion.hashCode();
     }
 
 }

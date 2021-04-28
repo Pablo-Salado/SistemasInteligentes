@@ -12,12 +12,12 @@ public class HashMapL<E> extends Arbol{
 
     @Override
     public boolean containsKey(Estado estado) {
-        return false;
+        return hashMap.containsKey(estado);
     }
 
     @Override
     public Nodo get(Estado estado) {
-        return null;
+        return hashMap.get(estado);
     }
 
     @Override
