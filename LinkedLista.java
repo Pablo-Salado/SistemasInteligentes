@@ -33,8 +33,8 @@ public class LinkedLista<E> extends Arbol{
         int i = 0;
         boolean res = false;
         Nodo resNodo = null;
-        while(i < lista.size() && !res) {
 
+        while(i < lista.size() && !res) {
             if (lista.get(i).e.equals(estado)) {
                 resNodo = lista.get(i);
                 res = true;
