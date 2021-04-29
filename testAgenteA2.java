@@ -38,6 +38,8 @@ public class testAgenteA2 {
                 if(w.equals(Final)){
                     w.ver();
                     System.out.println("Ha llegado al final");
+                    int pasos = x.size() - 1;
+                    System.out.println("Ha necesitado " + pasos + " pasos");
                 }else {
                     w.ver();
                 }
