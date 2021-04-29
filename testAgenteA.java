@@ -1,32 +1,57 @@
 package SistemasInteligentes;
 
-public class testAgenteA {
-    public static void main(String [] args) {
-        long res = 0;
-        long start = System.currentTimeMillis();
+import SistemasInteligentes.AgenteA;
+import SistemasInteligentes.Estado;
+import SistemasInteligentes.EstadoMalla;
+import SistemasInteligentes.Malla;
 
-        System.out.println("---------------------------------------------------------------");
-        System.out.println("Prueba AgenteA");
-        System.out.println();
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+public class testAgenteA {
+
+
+    public static void main(String [] args){
+        long start = System.currentTimeMillis();
         Malla campo = new Malla(33, 50, 100, 33);
         campo.ver();
 
-        EstadoMalla estadoInicial = new EstadoMalla(campo, campo.getPosI());
-        EstadoMalla estadoFinal = new EstadoMalla(campo, campo.getPosF());
+        EstadoMalla Inicio = new EstadoMalla(campo,campo.getPosI());
+        EstadoMalla Final = new EstadoMalla(campo,campo.getPosF());
+        AgenteA solucionador = new AgenteA();
+        List<Estado> x = solucionador.resuelve(Inicio,Final);
 
-        AgenteA agenteA = new AgenteA();
+        Collections.reverse(x);
+        System.out.println("El agente A comienza en ");
 
-        try{
-            for(Estado x : agenteA.resuelve(estadoInicial, estadoFinal)){
-                x.ver();
+        Iterator<Estado> it = x.iterator();
+        it.next().ver();
+        System.out.println("Y continua por");
+        int first=0;
+        for(Estado w: x){
+            if(first==0){
+                first++;
+            }else {
+                if(w.equals(Final)){
+                    w.ver();
+                    System.out.println("Ha llegado al final");
+                    int pasos = x.size() - 1;
+                    System.out.println("Ha necesitado " + pasos + " pasos");
+                }else {
+                    w.ver();
+                }
             }
-        }catch (NullPointerException e){
-            System.out.println("No tiene solucion");
         }
-
-
         long end = System.currentTimeMillis();
-        res = end - start;
-        System.out.println(res);
+        long res = end - start;
+
+        System.out.println("Tiempo necesario = "+res+"ms");
+
+
     }
+
+
 }
