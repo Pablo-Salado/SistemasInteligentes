@@ -15,43 +15,45 @@ public class testAgenteA {
 
 
     public static void main(String [] args){
-        long start = System.currentTimeMillis();
-        Malla campo = new Malla(33, 50, 100, 33);
-        campo.ver();
+        try{
+            long start = System.currentTimeMillis();
+            Malla campo = new Malla(50, 100, 100, 100);
+            campo.ver();
 
-        EstadoMalla Inicio = new EstadoMalla(campo,campo.getPosI());
-        EstadoMalla Final = new EstadoMalla(campo,campo.getPosF());
-        AgenteA solucionador = new AgenteA();
-        List<Estado> x = solucionador.resuelve(Inicio,Final);
+            EstadoMalla Inicio = new EstadoMalla(campo,campo.getPosI());
+            EstadoMalla Final = new EstadoMalla(campo,campo.getPosF());
+            AgenteA solucionador = new AgenteA();
 
-        Collections.reverse(x);
-        System.out.println("El agente A comienza en ");
+            List<Estado> x = solucionador.resuelve(Inicio,Final);
 
-        Iterator<Estado> it = x.iterator();
-        it.next().ver();
-        System.out.println("Y continua por");
-        int first=0;
-        for(Estado w: x){
-            if(first==0){
-                first++;
-            }else {
-                if(w.equals(Final)){
-                    w.ver();
-                    System.out.println("Ha llegado al final");
-                    int pasos = x.size() - 1;
-                    System.out.println("Ha necesitado " + pasos + " pasos");
+            Collections.reverse(x);
+            System.out.println("El agente A comienza en ");
+
+            Iterator<Estado> it = x.iterator();
+            it.next().ver();
+            System.out.println("Y continua por");
+            int first=0;
+            for(Estado w: x){
+                if(first==0){
+                    first++;
                 }else {
-                    w.ver();
+                    if(w.equals(Final)){
+                        w.ver();
+                        System.out.println("Ha llegado al final");
+                        int pasos = x.size() - 1;
+                        System.out.println("Ha necesitado " + pasos + " pasos");
+                    }else {
+                        w.ver();
+                    }
                 }
             }
+            long end = System.currentTimeMillis();
+            long res = end - start;
+
+            System.out.println("Tiempo necesario = "+res+"ms");
+
+        }catch (NullPointerException e){
+            System.out.println("No tiene solucion");
         }
-        long end = System.currentTimeMillis();
-        long res = end - start;
-
-        System.out.println("Tiempo necesario = "+res+"ms");
-
-
     }
-
-
 }
