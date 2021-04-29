@@ -7,7 +7,7 @@ public class testAgenteA {
         System.out.println("---------------------------------------------------------------");
         System.out.println("Prueba AgenteA");
         System.out.println();
-        Malla campo = new Malla(43, 8, 5, 10);
+        Malla campo = new Malla(33, 3, 3, 3);
         campo.ver();
 
         EstadoMalla estadoInicial = new EstadoMalla(campo, campo.getPosI());
@@ -16,9 +16,15 @@ public class testAgenteA {
         long start = System.currentTimeMillis();
 
         AgenteA agenteA = new AgenteA();
-        for(Estado x : agenteA.resuelve(estadoInicial, estadoFinal)){
-            x.ver();
+
+        try{
+            for(Estado x : agenteA.resuelve(estadoInicial, estadoFinal)){
+                x.ver();
+            }
+        }catch (NullPointerException e){
+            System.out.println("No tiene solucion");
         }
+
 
         long end = System.currentTimeMillis();
         res = end - start;
